@@ -1,0 +1,20 @@
+.rc-input-number-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.rc-input-number-input {
+  padding: 10px 14px;
+  font-size: 32px;
+  width: 100%;
+  border: 1px solid var(--gray-300);
+  outline: none;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  transition: all 0.2s;
+  background-color: var(--gray-50);
+}
+.rc-input-number-focused .rc-input-number-input {
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 3px var(--blue-200);
+}
