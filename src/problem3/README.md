@@ -39,43 +39,11 @@ const getPriority = (blockchain) => {
 };
 ```
 
-## Use a variable that doesn't exist
+## Use a variable that doesn't exist and the sort function is not good
 
 ##### Inside the sortedBalances function, the lhsPriority variable is an undefined, the balancePriority variable must be used instead
 
-#### From
-
-```javascript
-	const sortedBalances = useMemo(() => {
-    return balances.filter((balance: WalletBalance) => {
-		  const balancePriority = getPriority(balance.blockchain);
-		  if (lhsPriority > -99) {
-		     if (balance.amount <= 0) {
-		       return true;
-		     }
-		  }
-		  return false
-		})
-```
-
-#### To
-
-```javascript
-const sortedBalances = useMemo(() => {
-  return balances.filter((balance) => {
-    const balancePriority = getPriority(balance.blockchain);
-    if (balancePriority > -99) {
-      if (balance.amount <= 0) {
-        return true;
-      }
-    }
-    return false;
-  })
-```
-
-## Using the sort function is not good
-
-##### Inside the sortedBalances function, the sort function is not good, We don't need to use if else conditionals, instead we use simpler code
+##### The sort function is not good, We don't need to use if else conditionals, instead we use simpler code
 
 #### From
 
